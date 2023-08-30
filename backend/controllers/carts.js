@@ -53,7 +53,7 @@ cartsRouter.post('/', async (request, response) => {
   response.json(savedCart)
 })
 
-cartsRouter.put('/:id', async (request, request) => {
+cartsRouter.put('/:id', async (request, response) => {
   const body = request.body
   const cart = {
     items: body.items,

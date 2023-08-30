@@ -18,9 +18,10 @@ usersRouter.get('/:id', async (request, response) => {
 })
 
 usersRouter.post('/', async (request, response) => {
-  const { username, name, password } = request.body
+  const { username, name, password, email, phone, avatarId, address } =
+    request.body
 
-  if (password == undefined) {
+  if (password === undefined) {
     return response.status(400).json({
       error: 'User validation failed: Path `password` is required.',
     })
@@ -44,4 +45,7 @@ usersRouter.post('/', async (request, response) => {
     avatarId,
     address,
   })
+  const savedUser = await user.save()
+
+  response.status(201).json(savedUser)
 })
