@@ -23,7 +23,8 @@ const userSchema = new mongoose.Schema({
   phone: {
     type: Number,
     required: true,
-    minLength: 10,
+    min: 1000000000,
+    max: 9999999999,
   },
   avatarId: Number,
   address: String,
