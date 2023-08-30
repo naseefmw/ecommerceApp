@@ -34,4 +34,5 @@ cartSchema.set('toJSON', {
   },
 })
 
-module.exports = mongoose.model('Cart', cartSchema)
+const Cart = mongoose.model('Cart', cartSchema)
+module.exports = Cart

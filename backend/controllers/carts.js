@@ -12,7 +12,7 @@ cartsRouter.get('/', async (request, response) => {
   response.json(carts)
 })
 
-cartsRouter.get('./myCart', async (request, response) => {
+cartsRouter.get('/myCart', async (request, response) => {
   const user = request.user
   const cart = await Cart.findById(user.cart)
     .populate('product', {
