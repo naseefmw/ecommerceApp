@@ -3,10 +3,19 @@ const Cart = require('../models/cart')
 
 cartsRouter.get('/', async (request, response) => {
   const carts = await Cart.find({})
-    .populate('product', {
-      name: 1,
-      image: 1,
-      price: 1,
+    .populate({
+      path: 'items',
+      populate: {
+        path: 'product',
+        model: 'Product',
+      },
+    })
+    .populate({
+      path: 'purchaseHistory',
+      populate: {
+        path: 'product',
+        model: 'Product',
+      },
     })
     .populate('user', { username: 1, name: 1 })
   response.json(carts)
@@ -14,13 +23,24 @@ cartsRouter.get('/', async (request, response) => {
 
 cartsRouter.get('/myCart', async (request, response) => {
   const user = request.user
-  const cart = await Cart.findById(user.cart)
-    .populate('product', {
-      name: 1,
-      image: 1,
-      price: 1,
+  const carts = await Cart.find({})
+    .populate({
+      path: 'items',
+      populate: {
+        path: 'product',
+        model: 'Product',
+      },
+    })
+    .populate({
+      path: 'purchaseHistory',
+      populate: {
+        path: 'product',
+        model: 'Product',
+      },
     })
     .populate('user', { username: 1, name: 1 })
+
+  const cart = carts.find((cart) => cart.user.id === user.id)
 
   if (cart) {
     response.json(cart)
