@@ -22,11 +22,11 @@ productsRouter.post('/', async (request, response) => {
     name: body.name,
     description: body.description,
     brand: body.brand,
-    price: body.price,
+    price: body.price || 0,
     category: body.category,
     image: body.image,
     addedDate: body.addedDate,
-    rating: body.rating,
+    rating: body.rating || 2.5,
   })
 
   const savedProduct = await product.save()
