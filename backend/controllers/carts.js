@@ -65,6 +65,7 @@ cartsRouter.post('/', async (request, response) => {
   const cart = new Cart({
     user: user.id,
     items: body.items,
+    purchaseHistory: body.purchaseHistory,
   })
 
   const savedCart = await cart.save()
@@ -83,6 +84,20 @@ cartsRouter.put('/:id', async (request, response) => {
   const updatedCart = await Cart.findByIdAndUpdate(request.params.id, cart, {
     new: true,
   })
+    .populate({
+      path: 'items',
+      populate: {
+        path: 'product',
+        model: 'Product',
+      },
+    })
+    .populate({
+      path: 'purchaseHistory',
+      populate: {
+        path: 'product',
+        model: 'Product',
+      },
+    })
   response.json(updatedCart)
 })
 
