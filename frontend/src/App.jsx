@@ -1,5 +1,16 @@
+import Home from './components/HomePage/Home'
+import { useState, useEffect } from 'react'
+
 const App = () => {
-  return <>Hello World!</>
+  const [products, setProducts] = useState(null)
+
+  //useEffect()
+
+  return (
+    <>
+      <Home />
+    </>
+  )
 }
 
 export default App
