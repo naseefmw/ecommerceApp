@@ -1,0 +1,112 @@
+[
+  {
+    "name": "SAMSUNG Galaxy S23 5G",
+    "description": "Give yourself a smartphone that recognises your emotions and responds appropriately. The Samsung Galaxy S23 5G's enhanced AI and Nightography feature produces low-light photos and videos that are vivid and colourful from dusk to dawn and back again. The Snapdragon processor in this phone also offers quick video streaming and gaming. Additionally, adaptive 120 Hz makes scrolling fluid, and Eye Comfort Shield guards against eye fatigue even while looking in low light.",
+    "brand": "Samsung",
+    "price": 74999,
+    "category": "SmartPhone",
+    "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/1/r/n/-original-imagmg6gyzgzzszt.jpeg?q=70",
+    "addedDate": "2023-05-20",
+    "rating": 4.5
+  },
+  {
+    "name": "SAMSUNG Galaxy S23 Plus 5G",
+    "description": "Give yourself a smartphone that recognises your emotions and responds appropriately. The Samsung Galaxy S23 Plus 5G's enhanced AI and Nightography feature produces low-light photos and videos that are vivid and colourful from dusk to dawn and back again. The Snapdragon processor in this phone also offers quick video streaming and gaming. Additionally, adaptive 120 Hz makes scrolling fluid, and Eye Comfort Shield guards against eye fatigue even while looking in low light.",
+    "brand": "Samsung",
+    "price": 104999,
+    "category": "SmartPhone",
+    "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/8/c/x/-original-imagmg6gy7x3xwcg.jpeg?q=70",
+    "addedDate": "2023-06-25",
+    "rating": 4.4
+  },
+  {
+    "name": "APPLE iPhone 14",
+    "description": "128 GB ROM, 15.49 cm (6.1 inch) Super Retina XDR Display, 12MP + 12MP | 12MP Front Camera, A15 Bionic Chip, 6 Core Processor Processor",
+    "brand": "Apple",
+    "price": 66999,
+    "category": "SmartPhone",
+    "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/9/e/e/-original-imaghx9q5rvcdghy.jpeg?q=70",
+    "addedDate": "2023-07-15",
+    "rating": 4.6
+  },
+  {
+    "name": "Google Pixel 7a",
+    "description": "Experience the simplicity and seamless transitions with the Google Pixel 7a, which is loaded with a variety of incredible features. The Tensor G2 processor, designed by Google, boosts the Pixel 7a's speed, effectiveness, and security. It's the same chip that's in Pixel 7 and Pixel 7 Pro. Furthermore, With a dual rear camera system and Google Tensor G2's advanced image processing, Pixel 7a lets you create perfect photos every time. It's easy to take amazing pictures in low light, or fix your blurry photos and remove distractions with a few taps in Google Photos. Moreover, the Pixel 7a camera includes Super Res Zoom, so that you can get up close without an extra telephoto lens.",
+    "brand": "Google",
+    "price": 43999,
+    "category": "SmartPhone",
+    "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/z/b/d/-original-imagpgx48f4szdvf.jpeg?q=70",
+    "addedDate": "2023-01-20",
+    "rating": 4.0
+  },
+  {
+    "name": "SAMSUNG Galaxy S22 5G",
+    "description": "Pro-grade Camera that lets you make your nights epic with Nightography: Its our brightest innovation yet. The sensor pulls in more light, the Super Clear Glass dials down lens flare, and fast-acting AI delivers near-instant intelligent processing. Vision Booster outshines the sun: Stunning 120Hz Dynamic AMOLED 2X display is crafted specifically for high outdoor visibility, keeping the view clear in bright daylight.4nm processor, our fastest chip yet: Our fastest, most powerful chip ever. That means, a faster CPU and GPU compared to Galaxy S21 Ultra. Its an epic leap for smartphone technology. Sleek design in a range of colors lets you express yourself how you like. The slim bezels flow into a symmetrical polished frame for an expansive, balanced display. Corning Gorilla Glass Victus+ on the screen and back panels.",
+    "brand": "Samsung",
+    "price": 53000,
+    "category": "SmartPhone",
+    "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/j/y/6/-original-imaggj686yhjdrgk.jpeg?q=70",
+    "addedDate": "2022-09-12",
+    "rating": 4.3
+  },
+  {
+    "name": "HP OMEN Core i5 13420H",
+    "description": "You can step up your gaming experience with the HP OMEN 16 gaming laptop. With the 13th Gen Intel Core i5-13420H processor, you can enjoy smooth and fast processing. The NVIDIA GeForce RTX 4050 Laptop GPU offers seamless, lag-free gaming. The FHD display with a 144 Hz of refresh rate offers more immersion so you can engage in intense gaming sessions. Featuring Flicker-free technology, an anti-glare screen, and auto-brightness control, this laptop reduces eye fatigue which enables you to engage in more screen time.",
+    "brand": "HP",
+    "price": 102990,
+    "category": "Laptop",
+    "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/f/3/h/-original-imagsnzbnbnyuf9b.jpeg?q=70",
+    "addedDate": "2022-05-11",
+    "rating": 4.7
+  },
+  {
+    "name": "APPLE 2020 Macbook Air M1",
+    "description": "This Apple Macbook is powered by the Apple M1 chip and is easily portable so that you can carry it with you anywhere you want. This thin and light notebook is equipped with an 8-core CPU to handle all your tasks more efficiently. The 8-core GPU of this notebook takes graphic-intensive games and apps to a whole new level. It also comes with a 16-core Neural Engine to do machine learning tasks more effectively. Its fan-less design offers silent operations and has a long-lasting battery life which can last up to 18 hours on a single charge.",
+    "brand": "Apple",
+    "price": 81990,
+    "category": "Laptop",
+    "image": "https://rukminim2.flixcart.com/image/416/416/kp5sya80/screen-guard/tempered-glass/o/v/n/apple-macbook-air-m1-13-3-inch-lightwings-original-imag3gh5xftgbpg3.jpeg?q=70",
+    "addedDate": "2022-09-09",
+    "rating": 4.7
+  },
+  {
+    "name": "SAMSUNG Galaxy Book2 ",
+    "description": "Say hello to powerful performance, seamless screen sharing, and high-quality video calling by bringing home the Samsung Galaxy Book2 laptop. This laptop features a lightweight design with an immersive 39.62 cm (15.6) display to ensure an expansive viewing experience and easy utility. Also, it is equipped with multiple intelligent features including SmartThings App, Smart Switch, Screen sharing and more, thus, rendering an exceptional user experience. Furthermore, this laptop is driven by a powerful Intel Iris Xe processor that allows you to comfortably complete your daily computing needs.",
+    "brand": "Samsung",
+    "price": 64990,
+    "category": "Laptop",
+    "image": "https://rukminim2.flixcart.com/image/416/416/l37mtu80/computer/o/o/w/np750xee-xb1in-thin-and-light-laptop-samsung-original-imagednvzzu7t23v.jpeg?q=70",
+    "addedDate": "2022-08-08",
+    "rating": 4.5
+  },
+  {
+    "name": "Samsung Galaxy Buds Live Bluetooth",
+    "description": "1 year warranty provided by the manufacturer from date of purchase.Note : If the size of the earbud tips does not match the size of your ear canals or the headset is not worn properly in your ears, you may not obtain the correct sound qualities or call performance. Change the earbud tips to ones that fit more snugly in your ears. Crystal clear voice & call quality with 3 mics & a Voice Pick Up unit. Deep & spacious sound tuned by AKG. Sensors: Accelerometer, Gyro, Proximity, Hall, Touch, Grip, VPU. Eye-catching design in a glossy finish that keeps you connected yet comfortable through the day.",
+    "brand": "Samsung",
+    "price": 4790,
+    "category": "Accessory",
+    "image": "https://m.media-amazon.com/images/I/61G5JoU9tTL._SX679_.jpg",
+    "addedDate": "2021-08-08",
+    "rating": 3.9
+  },
+  {
+    "name": "APPLE AirPods Pro",
+    "description": "AirPods Pro feature up to 2x more Active Noise Cancellation, plus Adaptive Transparency, and Personalised Spatial Audio with dynamic head tracking for immersive sound. Now with multiple ear tips (XS, S, M, L) and up to 6 hours of listening time.",
+    "brand": "Apple",
+    "price": 26900,
+    "category": "Accessory",
+    "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/s/t/m/-original-imaghxgnjdgyghfw.jpeg?q=70",
+    "addedDate": "2023-06-11",
+    "rating": 4.5
+  },
+  {
+    "name": "HP S1000 Silent Wireless Optical Mouse",
+    "description": "Wireless. Interface: 2.4GHz Wireless. Optical Mouse",
+    "brand": "HP",
+    "price": 599,
+    "category": "Accessory",
+    "image": "https://rukminim2.flixcart.com/image/416/416/k0e66q80/mouse/u/8/6/hp-s1000-original-imafk74z7xnkmqyx.jpeg?q=70",
+    "addedDate": "2023-09-12",
+    "rating": 4.3
+  }
+]
