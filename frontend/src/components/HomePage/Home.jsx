@@ -1,14 +1,16 @@
 import '../style.css'
-import AppBar from './HomeAppBar'
+import AppBar from './AppBar'
 import ProductListing from './ProductListing'
 
-const Home = () => {
-  return (
-    <>
-      <AppBar />
-      <ProductListing />
-    </>
-  )
+const Home = ({ productList }) => {
+  if (productList) {
+    return (
+      <>
+        <AppBar />
+        <ProductListing productList={productList} />
+      </>
+    )
+  }
 }
 
 export default Home
