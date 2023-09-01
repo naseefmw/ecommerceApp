@@ -1,5 +1,5 @@
 import '../style.css'
-import AppBar from './AppBar'
+import AppBar from '../AppBar'
 import ProductListing from './ProductListing'
 
 const Home = ({ productList }) => {
