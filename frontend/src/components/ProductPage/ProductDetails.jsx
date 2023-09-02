@@ -2,9 +2,11 @@ import { useParams } from 'react-router-dom'
 import AppBar from '../AppBar'
 import { Button } from '@mui/material'
 import '../style.css'
+import { useSelector } from 'react-redux'
 
-const ProductDetails = ({ productList }) => {
+const ProductDetails = () => {
   const id = useParams().id
+  const productList = useSelector((state) => state.product)
   const product = productList.find((p) => p.id === id)
 
   const handleButton = () => {

@@ -1,22 +1,16 @@
 import Home from './components/HomePage/Home'
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import productService from './services/products'
 import cartService from './services/cart'
 import ProductDetails from './components/ProductPage/ProductDetails'
 import Register from './components/LoginPage/Register'
 import Login from './components/LoginPage/Login'
+import { useDispatch } from 'react-redux'
+import { initializeProducts } from './reducers/productReducer'
 
 const App = () => {
   const [user, setUser] = useState(null)
-  const [productList, setProductList] = useState(null)
-
-  useEffect(() => {
-    productService.getAllProducts().then((products) => {
-      setProductList(products)
-      console.log(products[0])
-    })
-  }, [])
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedBookTrackerUser')
@@ -27,14 +21,15 @@ const App = () => {
     }
   }, [])
 
+  useEffect(() => {
+    dispatch(initializeProducts())
+  })
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home productList={productList} />} />
-        <Route
-          path="/details/:id"
-          element={<ProductDetails productList={productList} user={user} />}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/details/:id" element={<ProductDetails user={user} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
       </Routes>

@@ -2,8 +2,10 @@ import '../style.css'
 import Product from './Product'
 import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-const ProductListing = ({ productList }) => {
+const ProductListing = () => {
+  const productList = useSelector((state) => state.product)
   const navigate = useNavigate()
   const handleButton = (id) => {
     navigate(`/details/${id}`)
