@@ -7,7 +7,7 @@ const cors = require('cors')
 const loginRouter = require('./controllers/login')
 const usersRouter = require('./controllers/users')
 const productsRouter = require('./controllers/products')
-const cartsRouter = require('./controllers/carts')
+const itemsRouter = require('./controllers/items')
 
 const middleware = require('./utils/middleware')
 const logger = require('./utils/logger')
@@ -34,7 +34,7 @@ app.use(middleware.requestLogger)
 app.use('/api/products', productsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
-app.use('/api/carts', middleware.userExtractor, cartsRouter)
+app.use('/api/items', middleware.userExtractor, itemsRouter)
 
 if (process.env.NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing')

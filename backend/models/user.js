@@ -28,10 +28,12 @@ const userSchema = new mongoose.Schema({
   },
   avatarId: Number,
   address: String,
-  cart: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Cart',
-  },
+  cart: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Item',
+    },
+  ],
 })
 
 userSchema.plugin(uniqueValidator)
