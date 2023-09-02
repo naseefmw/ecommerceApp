@@ -3,6 +3,7 @@ body {
   background-color: #eff1f4;
 }
 
+/*Product Page*/
 .productlist {
   margin-top: 70px;
   padding: 5px;
@@ -33,6 +34,24 @@ body {
   max-height: 300px;
 }
 
+/*Product Details Page*/
 .productdetails {
   margin-top: 70px;
+}
+
+/*Login Page*/
+
+.loginformbackground {
+  background-color: #e84855;
+  height: 100vh;
+  display: flex;
+}
+
+.loginformbackground form {
+  margin: auto;
+  background-color: white;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
