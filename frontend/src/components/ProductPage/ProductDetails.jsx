@@ -5,21 +5,22 @@ import { Button } from '@mui/material'
 import '../style.css'
 import { useDispatch, useSelector } from 'react-redux'
 
-const ProductDetails = () => {
+const ProductDetails = ({ user, productList }) => {
   const dispatch = useDispatch()
+
   const id = useParams().id
-  const productList = useSelector((state) => state.product)
   const myCart = useSelector((state) => state.cart)
-  //const itemsInCart = myCart.items.map((item) => item.product.id)
   const product = productList.find((p) => p.id === id)
 
-  const handleButton = () => {
-    console.log('hello')
+  //const itemsInCart = myCart.
+  const handleButton = (event) => {
+    event.preventDefault()
     const itemsInCart = myCart.map((item) => item.product.id)
+    console.log('hello')
     if (itemsInCart.includes(product.id)) {
       console.log('in cart')
     } else {
-      dispatch(addToCart({ product: product.id }))
+      dispatch(addToCart(product))
     }
   }
   if (product) {
@@ -32,6 +33,8 @@ const ProductDetails = () => {
         </div>
       </>
     )
+  } else {
+    return null
   }
 }
 

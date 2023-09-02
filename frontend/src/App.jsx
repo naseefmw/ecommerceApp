@@ -2,6 +2,7 @@ import Home from './components/HomePage/Home'
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import cartService from './services/cart'
+import productService from './services/products'
 import ProductDetails from './components/ProductPage/ProductDetails'
 import Register from './components/LoginPage/Register'
 import Login from './components/LoginPage/Login'
@@ -12,6 +13,7 @@ import { initializeCart } from './reducers/cartReducer'
 
 const App = () => {
   const [user, setUser] = useState(null)
+  const [productList, setProductList] = useState([])
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -26,13 +28,17 @@ const App = () => {
 
   useEffect(() => {
     dispatch(initializeProducts())
-  })
+    productService.getAllProducts().then((products) => setProductList(products))
+  }, [])
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/details/:id" element={<ProductDetails user={user} />} />
+        <Route
+          path="/details/:id"
+          element={<ProductDetails user={user} productList={productList} />}
+        />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/cart" element={<Cart user={user} />} />

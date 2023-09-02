@@ -10,11 +10,9 @@ itemsRouter.get('/', async (request, response) => {
 
 itemsRouter.get('/myCart', async (request, response) => {
   const user = request.user
-  const items = await Item.find({})
-    .populate('product')
-    .populate('user', { username: 1, name: 1 })
-
-  const myCart = items.filter((item) => item.user.id === user.id)
+  const items = await Item.find({}).populate('product')
+  //console.log(items)
+  const myCart = items.filter((item) => item.user.toString() === user.id)
 
   if (myCart) {
     response.json(myCart)
@@ -45,7 +43,7 @@ itemsRouter.post('/', async (request, response) => {
   const savedItem = await item.save()
   user.cart = user.cart.concat(savedItem._id)
   await user.save()
-  response.json(savedItem)
+  response.json(savedItem.populate('product'))
 })
 
 itemsRouter.put('/:id', async (request, response) => {
