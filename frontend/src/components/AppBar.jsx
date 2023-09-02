@@ -11,8 +11,10 @@ import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import { useNavigate } from 'react-router-dom'
 
 const MyAppBar = () => {
+  const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState(null)
 
   const isMenuOpen = Boolean(anchorEl)
@@ -22,6 +24,11 @@ const MyAppBar = () => {
 
   const handleMenuClose = () => {
     setAnchorEl(null)
+  }
+  const handleCartButton = (event) => {
+    event.preventDefault()
+    console.log('opencart')
+    navigate('/cart')
   }
 
   const menuId = 'primary-search-account-menu'
@@ -63,8 +70,9 @@ const MyAppBar = () => {
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
+              onClick={handleCartButton}
             >
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={0} color="error">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>

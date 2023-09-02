@@ -55,3 +55,9 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+/*ShoppingCart*/
+
+.cart {
+  margin-top: 70px;
+}

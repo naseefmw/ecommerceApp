@@ -9,7 +9,6 @@ const cartSlice = createSlice({
       return action.payload
     },
     async createCart(state, action) {
-      console.log(action.payload)
       const initialCart = {
         items: action.payload,
         purchaseHistory: [],
@@ -17,10 +16,37 @@ const cartSlice = createSlice({
       await cartService.create(initialCart).then()
       return initialCart
     },
+    async updateCart(state) {
+      try {
+        console.log('test1')
+        await cartService.update(state).then()
+      } catch (exception) {
+        console.log(exception)
+      }
+    },
+    async increaseQuantity(state, action) {
+      const id = action.payload
+      const itemToChange = state.items.find((item) => item.product.id === id)
+      const updatedItem = {
+        ...itemToChange,
+        quantity: itemToChange.quantity + 1,
+      }
+      const updatedItems = state.items.map((item) =>
+        item.product.id === id ? updatedItem : item
+      )
+
+      const updatedState = {
+        ...state,
+        items: updatedItems,
+      }
+      await cartService.update(updatedState).then()
+      return updatedState
+    },
   },
 })
 
-export const { setCart, createCart } = cartSlice.actions
+export const { setCart, createCart, increaseQuantity, updateCart } =
+  cartSlice.actions
 
 export const initializeCart = () => {
   return async (dispatch) => {

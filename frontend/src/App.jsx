@@ -5,6 +5,7 @@ import cartService from './services/cart'
 import ProductDetails from './components/ProductPage/ProductDetails'
 import Register from './components/LoginPage/Register'
 import Login from './components/LoginPage/Login'
+import Cart from './components/ShoppingCart/Cart'
 import { useDispatch } from 'react-redux'
 import { initializeProducts } from './reducers/productReducer'
 import { initializeCart } from './reducers/cartReducer'
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/details/:id" element={<ProductDetails user={user} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/cart" element={<Cart user={user} />} />
       </Routes>
     </Router>
   )
