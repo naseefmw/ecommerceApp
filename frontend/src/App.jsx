@@ -12,6 +12,7 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [productList, setProductList] = useState([])
   const [myCart, setMyCart] = useState([])
+  const [trigger, setTrigger] = useState('')
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedBookTrackerUser')
@@ -28,7 +29,7 @@ const App = () => {
 
   useEffect(() => {
     cartService.getAll().then((items) => setMyCart(items))
-  }, [])
+  }, [trigger])
 
   return (
     <Router>
@@ -41,12 +42,16 @@ const App = () => {
               user={user}
               productList={productList}
               cart={myCart}
+              setTrigger={setTrigger}
             />
           }
         />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path="/cart" element={<Cart user={user} cart={myCart} />} />
+        <Route
+          path="/cart"
+          element={<Cart user={user} cart={myCart} setTrigger={setTrigger} />}
+        />
       </Routes>
     </Router>
   )
