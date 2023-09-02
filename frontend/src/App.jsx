@@ -7,6 +7,7 @@ import Register from './components/LoginPage/Register'
 import Login from './components/LoginPage/Login'
 import { useDispatch } from 'react-redux'
 import { initializeProducts } from './reducers/productReducer'
+import { initializeCart } from './reducers/cartReducer'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -18,6 +19,7 @@ const App = () => {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
       cartService.setToken(user.token)
+      dispatch(initializeCart())
     }
   }, [])
 
