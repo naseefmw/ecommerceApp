@@ -1,14 +1,10 @@
 import '../style.css'
 import { Button } from '@mui/material'
-import { useDispatch } from 'react-redux'
-import { increaseQuantity } from '../../reducers/cartReducer'
 
 const Order = ({ item }) => {
-  const dispatch = useDispatch()
   const handlePlus = async (event) => {
     event.preventDefault()
     console.log('plus')
-    dispatch(increaseQuantity(item))
   }
   const handleMinus = () => {
     console.log('plus')

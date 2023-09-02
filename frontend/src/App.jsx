@@ -7,14 +7,11 @@ import ProductDetails from './components/ProductPage/ProductDetails'
 import Register from './components/LoginPage/Register'
 import Login from './components/LoginPage/Login'
 import Cart from './components/ShoppingCart/Cart'
-import { useDispatch } from 'react-redux'
-import { initializeProducts } from './reducers/productReducer'
-import { initializeCart } from './reducers/cartReducer'
 
 const App = () => {
   const [user, setUser] = useState(null)
   const [productList, setProductList] = useState([])
-  const dispatch = useDispatch()
+  const [myCart, setMyCart] = useState([])
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedBookTrackerUser')
@@ -22,26 +19,34 @@ const App = () => {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
       cartService.setToken(user.token)
-      dispatch(initializeCart())
     }
   }, [])
 
   useEffect(() => {
-    dispatch(initializeProducts())
     productService.getAllProducts().then((products) => setProductList(products))
+  }, [])
+
+  useEffect(() => {
+    cartService.getAll().then((items) => setMyCart(items))
   }, [])
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home productList={productList} />} />
         <Route
           path="/details/:id"
-          element={<ProductDetails user={user} productList={productList} />}
+          element={
+            <ProductDetails
+              user={user}
+              productList={productList}
+              cart={myCart}
+            />
+          }
         />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path="/cart" element={<Cart user={user} />} />
+        <Route path="/cart" element={<Cart user={user} cart={myCart} />} />
       </Routes>
     </Router>
   )

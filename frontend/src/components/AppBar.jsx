@@ -12,11 +12,8 @@ import Menu from '@mui/material/Menu'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { useNavigate } from 'react-router-dom'
-//import { initializeCart } from '../reducers/cartReducer'
-//import { useDispatch } from 'react-redux'
 
 const MyAppBar = () => {
-  //const dispatch = useDispatch()
   const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState(null)
 
@@ -30,8 +27,6 @@ const MyAppBar = () => {
   }
   const handleCartButton = (event) => {
     event.preventDefault()
-    console.log('opencart')
-    //dispatch(initializeCart())
     navigate('/cart')
   }
 
