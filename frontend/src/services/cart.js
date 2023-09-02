@@ -1,8 +1,7 @@
 import axios from 'axios'
 
-const baseUrl = '/api/carts'
+const baseUrl = '/api/items'
 let token = null
-let cartId = null
 
 const setToken = (newToken) => {
   token = `Bearer ${newToken}`
@@ -14,7 +13,6 @@ const getAll = () => {
   }
   const request = axios.get(`${baseUrl}/myCart`, config)
   return request.then((response) => {
-    cartId = response.data.id.toString()
     return response.data
   })
 }
@@ -27,11 +25,11 @@ const create = async (newObject) => {
   return response.data
 }
 
-const update = async (newObject) => {
+const update = async (id, newObject) => {
   const config = {
     headers: { Authorization: token },
   }
-  const response = await axios.put(`${baseUrl}/${cartId}`, newObject, config)
+  const response = await axios.put(`${baseUrl}/${id}`, newObject, config)
   return response.data
 }
 

@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import { increaseQuantity } from '../../reducers/cartReducer'
+//import { increaseQuantity } from '../../reducers/cartReducer'
 import { useDispatch } from 'react-redux'
 //import { UseSelector } from 'react-redux/es/hooks/useSelector'
 //import cartService from '../../services/cart'
@@ -9,7 +9,7 @@ const Order = ({ item }) => {
   const handlePlus = async (event) => {
     event.preventDefault()
     console.log('plus')
-    dispatch(increaseQuantity(item.product.id))
+    //dispatch(increaseQuantity(item.product.id))
   }
   const handleMinus = () => {
     console.log('plus')
