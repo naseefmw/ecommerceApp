@@ -8,10 +8,17 @@ const cartSlice = createSlice({
     setCart(state, action) {
       return action.payload
     },
+    addToCart(state, action) {
+      const item = action.payload
+      state.push({
+        item,
+      })
+      cartService.create(item)
+    },
   },
 })
 
-export const { setCart } = cartSlice.actions
+export const { setCart, addToCart } = cartSlice.actions
 
 export const initializeCart = () => {
   return async (dispatch) => {
