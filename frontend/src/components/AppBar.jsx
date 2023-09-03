@@ -13,7 +13,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { useNavigate } from 'react-router-dom'
 
-const MyAppBar = () => {
+const MyAppBar = ({ user, setUser }) => {
   const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState(null)
 
@@ -25,9 +25,22 @@ const MyAppBar = () => {
   const handleMenuClose = () => {
     setAnchorEl(null)
   }
-  const handleCartButton = (event) => {
-    event.preventDefault()
-    navigate('/cart')
+  const handleLogout = () => {
+    window.localStorage.clear()
+    setUser(null)
+    setAnchorEl(null)
+  }
+  const handleLogin = () => {
+    setAnchorEl(null)
+    navigate('/login')
+  }
+
+  const handleCartButton = () => {
+    if (user) {
+      navigate('/cart')
+    } else {
+      navigate('/login')
+    }
   }
 
   const menuId = 'primary-search-account-menu'
@@ -47,7 +60,11 @@ const MyAppBar = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Login</MenuItem>
+      {user ? (
+        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+      ) : (
+        <MenuItem onClick={handleLogin}>Login</MenuItem>
+      )}
     </Menu>
   )
 

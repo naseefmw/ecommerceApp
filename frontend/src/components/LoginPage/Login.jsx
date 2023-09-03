@@ -35,6 +35,16 @@ const Login = ({ setUser }) => {
           name="password"
         />
         <Button type="submit">Sign in</Button>
+        <span>
+          Don&apos;t have account?
+          <Button
+            variant="plain"
+            size="sm"
+            onClick={() => navigate('/register')}
+          >
+            Sign up
+          </Button>
+        </span>
       </form>
     </div>
   )

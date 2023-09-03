@@ -33,7 +33,12 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home productList={productList} />} />
+        <Route
+          path="/"
+          element={
+            <Home productList={productList} user={user} setUser={setUser} />
+          }
+        />
         <Route
           path="/details/:id"
           element={
@@ -49,7 +54,7 @@ const App = () => {
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route
           path="/cart"
-          element={<Cart user={user} cart={myCart} setCart={setMyCart} />}
+          element={<Cart cart={myCart} setCart={setMyCart} />}
         />
       </Routes>
     </Router>

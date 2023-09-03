@@ -1,9 +1,10 @@
 import '../style.css'
 import { TextField, InputAdornment, Button } from '@mui/material'
-//import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import registerService from '../../services/register'
 
 const Register = () => {
+  const navigate = useNavigate()
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
@@ -56,6 +57,12 @@ const Register = () => {
           name="password"
         />
         <Button type="submit">Sign up</Button>
+        <span>
+          Already have an account?
+          <Button variant="plain" size="sm" onClick={() => navigate('/login')}>
+            Sign in
+          </Button>
+        </span>
       </form>
     </div>
   )
