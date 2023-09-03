@@ -35,6 +35,7 @@ const Register = () => {
           name="name"
           required
           size="small"
+          inputProps={{ minLength: 3 }}
         />
 
         <TextField
@@ -44,6 +45,8 @@ const Register = () => {
           variant="outlined"
           label="Phone"
           name="phone"
+          type="number"
+          inputProps={{ min: 1000000000, max: 9999999999 }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">+91</InputAdornment>
@@ -67,6 +70,7 @@ const Register = () => {
           variant="outlined"
           label="Email"
           name="email"
+          type="email"
           required
         />
 
@@ -77,6 +81,7 @@ const Register = () => {
           label="Username"
           name="username"
           required
+          inputProps={{ minLength: 4 }}
         />
 
         <TextField
@@ -87,6 +92,7 @@ const Register = () => {
           type="password"
           label="Password"
           name="password"
+          inputProps={{ minLength: 8 }}
         />
         <Button type="submit" variant="contained">
           Sign up

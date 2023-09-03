@@ -98,7 +98,6 @@ const MyAppBar = ({ user, setUser }) => {
               <>
                 <IconButton
                   size="large"
-                  aria-label="show 4 new mails"
                   color="inherit"
                   onClick={handleCartButton}
                 >
