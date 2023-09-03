@@ -55,7 +55,14 @@ const App = () => {
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route
           path="/cart"
-          element={<Cart cart={myCart} setCart={setMyCart} />}
+          element={
+            <Cart
+              cart={myCart}
+              setCart={setMyCart}
+              user={user}
+              setUser={setUser}
+            />
+          }
         />
       </Routes>
     </Router>
