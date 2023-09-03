@@ -3,6 +3,17 @@ body {
   background-color: #eff1f4;
 }
 
+/*Home*/
+
+.filternavbar {
+  background-color: white;
+  margin-top: 75px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 /*Product Page*/
 .productlist {
   margin-top: 70px;

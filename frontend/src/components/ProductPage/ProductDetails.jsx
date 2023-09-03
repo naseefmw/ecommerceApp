@@ -4,7 +4,7 @@ import { Button } from '@mui/material'
 import '../style.css'
 import cartService from '../../services/cart'
 
-const ProductDetails = ({ user, productList, cart, setCart }) => {
+const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
   const id = useParams().id
   const itemsInCart = cart.map((item) => item.product.id)
   const product = productList.find((p) => p.id === id)
@@ -26,7 +26,7 @@ const ProductDetails = ({ user, productList, cart, setCart }) => {
   if (product) {
     return (
       <>
-        <AppBar />
+        <AppBar user={user} setUser={setUser} />
         <div className="productdetails">
           <span>{product.name}</span>
           <Button onClick={handleButton}>Add to Cart</Button>

@@ -44,6 +44,7 @@ const App = () => {
           element={
             <ProductDetails
               user={user}
+              setUser={setUser}
               productList={productList}
               cart={myCart}
               setCart={setMyCart}
