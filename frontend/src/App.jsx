@@ -10,9 +10,12 @@ import Cart from './components/ShoppingCart/Cart'
 
 const App = () => {
   const [user, setUser] = useState(null)
-  const [productList, setProductList] = useState([])
+  const [productList, setProductList] = useState(null)
   const [myCart, setMyCart] = useState([])
 
+  useEffect(() => {
+    productService.getAllProducts().then((products) => setProductList(products))
+  }, [])
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedBookTrackerUser')
     if (loggedUserJSON) {
@@ -23,11 +26,9 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-    productService.getAllProducts().then((products) => setProductList(products))
-  }, [])
-
-  useEffect(() => {
-    cartService.getAll().then((items) => setMyCart(items))
+    if (user) {
+      cartService.getAll().then((items) => setMyCart(items))
+    }
   }, [])
 
   return (

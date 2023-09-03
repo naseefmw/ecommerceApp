@@ -6,11 +6,14 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 const Home = ({ productList, user, setUser }) => {
-  const [filteredProducts, setFilter] = useState(productList)
+  const [filteredProducts, setFilter] = useState(null)
   const searchFilter = useSelector((state) => state.SEARCH)
   const sortFilter = useSelector((state) => state.SORT)
   const brandFilter = useSelector((state) => state.BRAND)
   const priceFilter = useSelector((state) => state.PRICE)
+  useEffect(() => {
+    setFilter(productList)
+  }, [productList])
 
   const sortingLogic = (list) => {
     switch (sortFilter) {
@@ -48,28 +51,31 @@ const Home = ({ productList, user, setUser }) => {
     }
   }
   useEffect(() => {
-    let filteredData
-    filteredData = productList.filter((product) =>
-      product.name.toLowerCase().includes(searchFilter.toLowerCase())
-    )
-    if (brandFilter !== 'ALL') {
-      filteredData = filteredData.filter(
-        (product) => product.brand === brandFilter
+    if (productList) {
+      let filteredData
+      filteredData = productList.filter((product) =>
+        product.name.toLowerCase().includes(searchFilter.toLowerCase())
       )
-    }
-    if (priceFilter !== 'ALL') {
-      filteredData = priceRangeFilter(filteredData)
-    }
+      if (brandFilter !== 'ALL') {
+        filteredData = filteredData.filter(
+          (product) => product.brand === brandFilter
+        )
+      }
+      if (priceFilter !== 'ALL') {
+        filteredData = priceRangeFilter(filteredData)
+      }
 
-    filteredData = sortingLogic(filteredData)
+      filteredData = sortingLogic(filteredData)
 
-    setFilter(filteredData)
-  }, [searchFilter, sortFilter, brandFilter, priceFilter])
+      setFilter(filteredData)
+    }
+  }, [searchFilter, sortFilter, brandFilter, priceFilter, productList])
 
   return (
     <>
       <FilterBar />
       <AppBar user={user} setUser={setUser} />
+
       <ProductListing productList={filteredProducts} />
     </>
   )

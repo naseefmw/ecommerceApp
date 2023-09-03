@@ -8,15 +8,17 @@ const ProductListing = ({ productList }) => {
   const handleButton = (id) => {
     navigate(`/details/${id}`)
   }
-  return (
-    <div className="productlist">
-      {productList.map((product) => (
-        <Button key={product.id} onClick={() => handleButton(product.id)}>
-          <Product product={product} />
-        </Button>
-      ))}
-    </div>
-  )
+  if (productList) {
+    return (
+      <div className="productlist">
+        {productList.map((product) => (
+          <Button key={product.id} onClick={() => handleButton(product.id)}>
+            <Product product={product} />
+          </Button>
+        ))}
+      </div>
+    )
+  }
 }
 
 export default ProductListing
