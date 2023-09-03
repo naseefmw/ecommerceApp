@@ -2,29 +2,40 @@ import '../style.css'
 import { Button } from '@mui/material'
 import cartService from '../../services/cart'
 import { useState } from 'react'
-const Order = ({ item, setTrigger }) => {
+const Order = ({ item, setCart, cart }) => {
   const [count, setCount] = useState(item.quantity)
-  const handlePlus = async () => {
-    const newState = {
-      product: item.product.id,
-      quantity: count + 1,
+
+  const handlePlus = () => {
+    if (count < 5) {
+      const newState = {
+        product: item.product.id,
+        quantity: count + 1,
+      }
+      cartService.update(item.id, newState)
+      const newCart = { ...item, quantity: count + 1 }
+      setCount(count + 1)
+      setCart(cart.map((i) => (i.id === item.id ? newCart : i)))
+    } else {
+      console.log('max')
     }
-    setCount(count + 1)
-    await cartService.update(item.id, newState)
-    setTrigger(count)
   }
-  const handleMinus = async () => {
-    const newState = {
-      product: item.product.id,
-      quantity: count - 1,
+  const handleMinus = () => {
+    if (count > 1) {
+      const newState = {
+        product: item.product.id,
+        quantity: count - 1,
+      }
+      cartService.update(item.id, newState)
+      const newCart = { ...item, quantity: count - 1 }
+      setCount(count - 1)
+      setCart(cart.map((i) => (i.id === item.id ? newCart : i)))
+    } else {
+      console.log('min')
     }
-    setCount(count - 1)
-    await cartService.update(item.id, newState)
-    setTrigger(count)
   }
-  const handleRemove = async () => {
-    await cartService.remove(item.id)
-    setTrigger(item.id)
+  const handleRemove = () => {
+    cartService.remove(item.id)
+    setCart(cart.filter((i) => i.id !== item.id))
   }
   if (item.product) {
     return (

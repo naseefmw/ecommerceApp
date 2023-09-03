@@ -13,7 +13,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { useNavigate } from 'react-router-dom'
 
-const MyAppBar = ({ setTrigger }) => {
+const MyAppBar = () => {
   const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState(null)
 
@@ -27,7 +27,6 @@ const MyAppBar = ({ setTrigger }) => {
   }
   const handleCartButton = (event) => {
     event.preventDefault()
-    setTrigger(event)
     navigate('/cart')
   }
 

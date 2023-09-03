@@ -43,7 +43,7 @@ itemsRouter.post('/', async (request, response) => {
   const savedItem = await item.save()
   user.cart = user.cart.concat(savedItem._id)
   await user.save()
-  response.json(savedItem.populate('product'))
+  response.json(savedItem)
 })
 
 itemsRouter.put('/:id', async (request, response) => {

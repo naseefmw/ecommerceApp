@@ -2,15 +2,15 @@ import AppBar from '../AppBar'
 import '../style.css'
 import Order from './Order'
 
-const Cart = ({ user, cart, setTrigger }) => {
+const Cart = ({ user, cart, setCart }) => {
   if (user && cart) {
     return (
       <>
-        <AppBar setTrigger={setTrigger} />
+        <AppBar />
         <div className="cart">
           cart
           {cart.map((item) => (
-            <Order key={item.product.id} item={item} setTrigger={setTrigger} />
+            <Order key={item.id} item={item} setCart={setCart} cart={cart} />
           ))}
         </div>
       </>
