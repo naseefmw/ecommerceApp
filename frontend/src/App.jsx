@@ -16,8 +16,9 @@ const App = () => {
   useEffect(() => {
     productService.getAllProducts().then((products) => setProductList(products))
   }, [])
+
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem('loggedBookTrackerUser')
+    const loggedUserJSON = window.localStorage.getItem('loggedUser')
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
@@ -29,7 +30,7 @@ const App = () => {
     if (user) {
       cartService.getAll().then((items) => setMyCart(items))
     }
-  }, [])
+  }, [user])
 
   return (
     <Router>

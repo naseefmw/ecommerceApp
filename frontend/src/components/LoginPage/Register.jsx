@@ -26,7 +26,6 @@ const Register = () => {
       setMessage('Account successfully created')
       setType('success')
       setTimeout(() => {
-        setMessage(null)
         navigate('/login')
       }, 3000)
       setOpen(true)
@@ -34,9 +33,6 @@ const Register = () => {
       console.log(exception.response.data)
       setMessage('Failed: Username or email already exists')
       setType('error')
-      setTimeout(() => {
-        setMessage(null)
-      }, 6000)
       setOpen(true)
     }
   }

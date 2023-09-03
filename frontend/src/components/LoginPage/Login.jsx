@@ -17,17 +17,13 @@ const Login = ({ setUser }) => {
         username: event.target.username.value,
         password: event.target.password.value,
       })
-      window.localStorage.setItem('loggedBookTrackerUser', JSON.stringify(user))
-      setUser(user)
-
+      window.localStorage.setItem('loggedUser', JSON.stringify(user))
       cartService.setToken(user.token)
+      setUser(user)
       navigate(`/`)
     } catch (exception) {
       console.log(exception.response.data)
-      setMessage('Invalid username or password ')
-      setTimeout(() => {
-        setMessage(null)
-      }, 6000)
+      setMessage('Invalid username or password!')
       setOpen(true)
     }
   }
