@@ -27,7 +27,8 @@ const Register = () => {
       setType('success')
       setTimeout(() => {
         setMessage(null)
-      }, 6000)
+        navigate('/login')
+      }, 3000)
       setOpen(true)
     } catch (exception) {
       console.log(exception.response.data)
