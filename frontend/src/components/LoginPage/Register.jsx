@@ -2,9 +2,14 @@ import '../style.css'
 import { TextField, InputAdornment, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import registerService from '../../services/register'
+import { useState } from 'react'
+import Snackbar from '../Snackbar'
 
 const Register = () => {
   const navigate = useNavigate()
+  const [open, setOpen] = useState(false)
+  const [message, setMessage] = useState(null)
+  const [type, setType] = useState('success')
   const width = 250
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -18,12 +23,25 @@ const Register = () => {
         avatarId: 1,
         address: event.target.address.value,
       })
+      setMessage('Account successfully created')
+      setType('success')
+      setTimeout(() => {
+        setMessage(null)
+      }, 6000)
+      setOpen(true)
     } catch (exception) {
-      console.log(exception)
+      console.log(exception.response.data)
+      setMessage('Failed: Username or email already exists')
+      setType('error')
+      setTimeout(() => {
+        setMessage(null)
+      }, 6000)
+      setOpen(true)
     }
   }
   return (
     <div className="loginformbackground">
+      <Snackbar open={open} setOpen={setOpen} type={type} message={message} />
       <form onSubmit={handleSubmit}>
         <span className="logo">Circuit Cart </span>
         <h2>Sign up</h2>
