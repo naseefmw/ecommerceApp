@@ -9,6 +9,9 @@ const Home = ({ productList, user, setUser }) => {
   const [filteredProducts, setFilter] = useState(productList)
   const searchFilter = useSelector((state) => state.SEARCH)
   const sortFilter = useSelector((state) => state.SORT)
+  const brandFilter = useSelector((state) => state.BRAND)
+  const priceFilter = useSelector((state) => state.PRICE)
+
   const sortingLogic = (list) => {
     switch (sortFilter) {
       case 'DATE':
@@ -28,13 +31,40 @@ const Home = ({ productList, user, setUser }) => {
         return list
     }
   }
+
+  const priceRangeFilter = (list) => {
+    switch (priceFilter) {
+      case 'U10K':
+        return list.filter((p) => p.price < 10000)
+      case '10K20K':
+        return list.filter((p) => p.price >= 10000 && p.price < 20000)
+
+      case '20K50K':
+        return list.filter((p) => p.price >= 20000 && p.price < 50000)
+      case 'O50K':
+        return list.filter((p) => p.price >= 50000)
+      default:
+        return list
+    }
+  }
   useEffect(() => {
-    const afterSearch = productList.filter((product) =>
+    let filteredData
+    filteredData = productList.filter((product) =>
       product.name.toLowerCase().includes(searchFilter.toLowerCase())
     )
-    const afterSort = sortingLogic(afterSearch)
-    setFilter(afterSort)
-  }, [searchFilter, sortFilter])
+    if (brandFilter !== 'ALL') {
+      filteredData = filteredData.filter(
+        (product) => product.brand === brandFilter
+      )
+    }
+    if (priceFilter !== 'ALL') {
+      filteredData = priceRangeFilter(filteredData)
+    }
+
+    filteredData = sortingLogic(filteredData)
+
+    setFilter(filteredData)
+  }, [searchFilter, sortFilter, brandFilter, priceFilter])
 
   return (
     <>

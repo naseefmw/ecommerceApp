@@ -1,6 +1,6 @@
 const initialState = {
   SEARCH: '',
-  SORT: 'PRICE_DESC',
+  SORT: 'DATE',
   BRAND: 'ALL',
   PRICE: 'ALL',
 }
