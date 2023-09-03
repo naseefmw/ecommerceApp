@@ -15,8 +15,13 @@ export default function MySnackbar({ open, setOpen, message, type }) {
   }
 
   return (
-    <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
-      <Alert onClose={handleClose} severity={type} sx={{ width: '100%' }}>
+    <Snackbar
+      open={open}
+      autoHideDuration={4000}
+      onClose={handleClose}
+      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+    >
+      <Alert onClose={handleClose} severity={type} sx={{ mt: 2 }}>
         {message}
       </Alert>
     </Snackbar>
