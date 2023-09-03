@@ -1,6 +1,25 @@
 body {
   margin: 0;
   background-color: #eff1f4;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@font-face {
+  font-family: 'Righteous';
+  src: local('Righteous'),
+    url(../assets/Righteous-Regular.ttf) format('truetype');
+}
+
+.logo {
+  font-family: 'Righteous';
+  font-size: 25px;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(232, 72, 85, 1) 48%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*Home*/
@@ -59,12 +78,22 @@ body {
 }
 
 .loginformbackground form {
+  padding: 5px 0;
   margin: auto;
   background-color: white;
-  width: 500px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 15px;
+  border-radius: 3px;
+}
+.loginformbackground h2 {
+  margin: 0;
+}
+
+.lighttext {
+  color: #839d9a;
 }
 
 /*ShoppingCart*/

@@ -5,6 +5,7 @@ import registerService from '../../services/register'
 
 const Register = () => {
   const navigate = useNavigate()
+  const width = 250
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
@@ -17,17 +18,29 @@ const Register = () => {
         avatarId: 1,
         address: event.target.address.value,
       })
-    } catch (error) {
-      console.log(error)
+    } catch (exception) {
+      console.log(exception)
     }
   }
   return (
     <div className="loginformbackground">
       <form onSubmit={handleSubmit}>
-        <h1>Sign up</h1>
-        <TextField variant="outlined" label="Name" name="name" />
+        <span className="logo">Circuit Cart </span>
+        <h2>Sign up</h2>
+        <span className="lighttext">Please enter your details</span>
+        <TextField
+          sx={{ width: width }}
+          variant="outlined"
+          label="Name"
+          name="name"
+          required
+          size="small"
+        />
 
         <TextField
+          sx={{ width: width }}
+          size="small"
+          required
           variant="outlined"
           label="Phone"
           name="phone"
@@ -39,6 +52,8 @@ const Register = () => {
         />
 
         <TextField
+          sx={{ width: width }}
+          size="small"
           multiline
           variant="outlined"
           label="Address"
@@ -46,20 +61,39 @@ const Register = () => {
           maxRows={3}
         />
 
-        <TextField variant="outlined" label="Email" name="email" />
-
-        <TextField variant="outlined" label="Username" name="username" />
+        <TextField
+          sx={{ width: width }}
+          size="small"
+          variant="outlined"
+          label="Email"
+          name="email"
+          required
+        />
 
         <TextField
+          sx={{ width: width }}
+          size="small"
+          variant="outlined"
+          label="Username"
+          name="username"
+          required
+        />
+
+        <TextField
+          sx={{ width: width }}
+          size="small"
+          required
           variant="outlined"
           type="password"
           label="Password"
           name="password"
         />
-        <Button type="submit">Sign up</Button>
+        <Button type="submit" variant="contained">
+          Sign up
+        </Button>
         <span>
           Already have an account?
-          <Button variant="plain" size="sm" onClick={() => navigate('/login')}>
+          <Button variant="text" onClick={() => navigate('/login')}>
             Sign in
           </Button>
         </span>

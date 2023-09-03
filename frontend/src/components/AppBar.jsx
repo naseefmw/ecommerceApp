@@ -89,7 +89,7 @@ const MyAppBar = ({ user, setUser }) => {
               component="div"
               sx={{ display: { xs: 'none', sm: 'block' } }}
             >
-              ElectroFusion
+              Circuit Cart
             </Typography>
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
