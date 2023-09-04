@@ -52,6 +52,7 @@ const FilterBar = () => {
         label="Search"
         value={searchFilter}
         onChange={handleSearch}
+        sx={{ width: 360 }}
       ></TextField>
       <FormControl size="small" sx={{ width: width }}>
         <InputLabel>Sort By</InputLabel>

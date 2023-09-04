@@ -28,11 +28,12 @@ body {
   background-color: white;
   padding: 10px;
   padding-top: 80px;
-  height: 50px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+
   gap: 10px;
 }
 
