@@ -12,14 +12,13 @@ const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [product, setProduct] = useState(null)
-
+  const id = useParams().id
   useEffect(() => {
     if (productList) {
       setProduct(productList.find((p) => p.id === id))
     }
-  }, [productList])
+  }, [productList, id])
 
-  const id = useParams().id
   const itemsInCart = cart.map((item) => item.product.id)
 
   const handleButton = () => {
@@ -60,7 +59,7 @@ const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
                 <Button variant="contained" disabled>
                   Added to Cart
                 </Button>
-              ) : (
+              ) : user ? (
                 <Button
                   variant="contained"
                   color="success"
@@ -68,6 +67,16 @@ const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
                   size="large"
                 >
                   Add to Cart
+                </Button>
+              ) : (
+                <Button
+                  variant="contained"
+                  color="success"
+                  disabled
+                  size="large"
+                >
+                  {' '}
+                  Sign in to use Cart
                 </Button>
               )}
             </div>

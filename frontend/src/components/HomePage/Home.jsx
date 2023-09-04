@@ -86,6 +86,7 @@ const Home = ({ productList, user, setUser }) => {
     priceFilter,
     productList,
     categoryFilter,
+    priceRangeFilter,
   ])
 
   return (
