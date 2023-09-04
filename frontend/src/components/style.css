@@ -45,6 +45,7 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  gap: 2%;
 }
 
 .product {
@@ -57,13 +58,16 @@ body {
   margin: 3%;
   background-color: white;
   width: 28vw;
+  min-width: 180px;
+  min-height: 180px;
   height: 27vw;
   border-radius: 2px;
   box-shadow: 0.3px 0.3px 2px #9da3a4;
 }
 
 .product img {
-  height: 16vw;
+  height: 14vw;
+  min-height: 70px;
   margin: 5px auto;
 }
 
@@ -72,11 +76,11 @@ body {
 }
 
 #product-name {
-  font-size: 1.4vw;
+  font-size: 1vmax;
 }
 
 .product h4 {
-  font-size: 1vw;
+  font-size: 1vmax;
   margin: 0;
   margin-left: 10px;
   padding: 1px 4px;
@@ -85,7 +89,7 @@ body {
   color: white;
 }
 .product h2 {
-  font-size: 1.4vw;
+  font-size: 1vmax;
   margin: 0;
   margin-left: 10px;
 }
