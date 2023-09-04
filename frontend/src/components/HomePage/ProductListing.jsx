@@ -12,7 +12,11 @@ const ProductListing = ({ productList }) => {
     return (
       <div className="productlist">
         {productList.map((product) => (
-          <Button key={product.id} onClick={() => handleButton(product.id)}>
+          <Button
+            key={product.id}
+            onClick={() => handleButton(product.id)}
+            sx={{ textTransform: 'none', color: 'black', p: 0 }}
+          >
             <Product product={product} />
           </Button>
         ))}

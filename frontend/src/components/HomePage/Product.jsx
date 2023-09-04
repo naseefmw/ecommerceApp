@@ -3,10 +3,9 @@ const Product = ({ product }) => {
   return (
     <div className="product">
       <img src={product.image} alt="product_image" />
-      <span>{product.name}</span>
-      <span>{product.brand}</span>
-      <span>{product.rating}</span>
-      <span>{product.price}</span>
+      <span id="product-name">{product.name}</span>
+      <h4>{product.rating} &#10025;</h4>
+      <h2>&#8377; {product.price}</h2>
     </div>
   )
 }
