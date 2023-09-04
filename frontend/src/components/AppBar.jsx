@@ -79,17 +79,12 @@ const MyAppBar = ({ user, setUser }) => {
       <AppBar position="fixed" sx={{ bgcolor: '#E84855' }}>
         <Toolbar>
           <IconButton onClick={handleLogo}>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: 'none', sm: 'block' } }}
-            >
+            <Typography variant="h6" noWrap component="div">
               <span className="logo">Circuit Cart</span>
             </Typography>
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box>
             {user ? (
               <>
                 <IconButton
