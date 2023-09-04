@@ -58,7 +58,7 @@ const MyAppBar = ({ user, setUser }) => {
     <Menu
       anchorEl={anchorEl}
       anchorOrigin={{
-        vertical: 'top',
+        vertical: 'bottom',
         horizontal: 'right',
       }}
       id={menuId}
@@ -70,11 +70,7 @@ const MyAppBar = ({ user, setUser }) => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      {user ? (
-        <MenuItem onClick={handleLogout}>Logout</MenuItem>
-      ) : (
-        <MenuItem onClick={handleLogin}>Login</MenuItem>
-      )}
+      <MenuItem onClick={handleLogout}>Logout</MenuItem>
     </Menu>
   )
 
@@ -89,7 +85,7 @@ const MyAppBar = ({ user, setUser }) => {
               component="div"
               sx={{ display: { xs: 'none', sm: 'block' } }}
             >
-              Circuit Cart
+              <span className="logo">Circuit Cart</span>
             </Typography>
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
@@ -118,7 +114,9 @@ const MyAppBar = ({ user, setUser }) => {
                 </IconButton>
               </>
             ) : (
-              <Button onClick={handleLogin}> Sign in</Button>
+              <Button variant="outlined" onClick={handleLogin}>
+                Sign in
+              </Button>
             )}
           </Box>
         </Toolbar>

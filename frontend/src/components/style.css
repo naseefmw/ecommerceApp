@@ -13,10 +13,10 @@ body {
   font-family: 'Righteous';
   font-size: 25px;
   background: linear-gradient(
-    90deg,
+    0deg,
     rgba(2, 0, 36, 1) 0%,
-    rgba(232, 72, 85, 1) 48%,
-    rgba(0, 212, 255, 1) 100%
+    rgba(0, 0, 0, 1) 48%,
+    rgba(33, 0, 255, 1) 76%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
