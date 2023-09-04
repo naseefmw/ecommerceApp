@@ -3,6 +3,7 @@ const initialState = {
   SORT: 'DATE',
   BRAND: 'ALL',
   PRICE: 'ALL',
+  CATEGORY: 'ALL',
 }
 const filterReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -14,6 +15,8 @@ const filterReducer = (state = initialState, action) => {
       return { ...state, BRAND: action.payload }
     case 'PRICE':
       return { ...state, PRICE: action.payload }
+    case 'CATEGORY':
+      return { ...state, CATEGORY: action.payload }
     case 'RESET':
       return initialState
     default:
@@ -36,6 +39,12 @@ export const sortBy = (filter) => {
 export const setBrand = (filter) => {
   return {
     type: 'BRAND',
+    payload: filter,
+  }
+}
+export const setCategory = (filter) => {
+  return {
+    type: 'CATEGORY',
     payload: filter,
   }
 }

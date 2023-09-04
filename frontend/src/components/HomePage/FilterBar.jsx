@@ -14,6 +14,7 @@ import {
   searchFor,
   setBrand,
   sortBy,
+  setCategory,
 } from '../../reducers/filterReducer'
 
 const FilterBar = () => {
@@ -21,7 +22,9 @@ const FilterBar = () => {
   const searchFilter = useSelector((state) => state.SEARCH)
   const sortFilter = useSelector((state) => state.SORT)
   const brandFilter = useSelector((state) => state.BRAND)
+  const categoryFilter = useSelector((state) => state.CATEGORY)
   const priceFilter = useSelector((state) => state.PRICE)
+
   const handleSearch = (event) => {
     dispatch(searchFor(event.target.value))
   }
@@ -30,6 +33,9 @@ const FilterBar = () => {
   }
   const handleBrand = (event) => {
     dispatch(setBrand(event.target.value))
+  }
+  const handleCategory = (event) => {
+    dispatch(setCategory(event.target.value))
   }
   const handlePrice = (event) => {
     dispatch(priceRange(event.target.value))
@@ -51,6 +57,19 @@ const FilterBar = () => {
           <MenuItem value="PRICE_ASC">Price low to high</MenuItem>
           <MenuItem value="PRICE_DESC">Price high to low</MenuItem>
           <MenuItem value="RATING">Rating</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl>
+        <InputLabel>Category</InputLabel>
+        <Select
+          label="Category"
+          value={categoryFilter}
+          onChange={handleCategory}
+        >
+          <MenuItem value="ALL">All</MenuItem>
+          <MenuItem value="Accessory">Accessory</MenuItem>
+          <MenuItem value="Laptop">Laptop</MenuItem>
+          <MenuItem value="SmartPhone">SmartPhone</MenuItem>
         </Select>
       </FormControl>
       <FormControl>

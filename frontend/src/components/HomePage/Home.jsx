@@ -11,6 +11,8 @@ const Home = ({ productList, user, setUser }) => {
   const sortFilter = useSelector((state) => state.SORT)
   const brandFilter = useSelector((state) => state.BRAND)
   const priceFilter = useSelector((state) => state.PRICE)
+  const categoryFilter = useSelector((state) => state.CATEGORY)
+
   useEffect(() => {
     setFilter(productList)
   }, [productList])
@@ -56,11 +58,19 @@ const Home = ({ productList, user, setUser }) => {
       filteredData = productList.filter((product) =>
         product.name.toLowerCase().includes(searchFilter.toLowerCase())
       )
+
+      if (categoryFilter !== 'ALL') {
+        filteredData = filteredData.filter(
+          (product) => product.category === categoryFilter
+        )
+      }
+
       if (brandFilter !== 'ALL') {
         filteredData = filteredData.filter(
           (product) => product.brand === brandFilter
         )
       }
+
       if (priceFilter !== 'ALL') {
         filteredData = priceRangeFilter(filteredData)
       }
@@ -69,7 +79,14 @@ const Home = ({ productList, user, setUser }) => {
 
       setFilter(filteredData)
     }
-  }, [searchFilter, sortFilter, brandFilter, priceFilter, productList])
+  }, [
+    searchFilter,
+    sortFilter,
+    brandFilter,
+    priceFilter,
+    productList,
+    categoryFilter,
+  ])
 
   return (
     <>
