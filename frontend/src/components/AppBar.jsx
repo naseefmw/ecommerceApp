@@ -41,6 +41,7 @@ const MyAppBar = ({ user, setUser }) => {
   }
 
   const handleLogo = () => {
+    dispatch(reset())
     navigate('/')
   }
 

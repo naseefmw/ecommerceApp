@@ -4,8 +4,13 @@ import { Button } from '@mui/material'
 import '../style.css'
 import cartService from '../../services/cart'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { setBrand } from '../../reducers/filterReducer'
+import { useDispatch } from 'react-redux'
 
 const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [product, setProduct] = useState(null)
 
   useEffect(() => {
@@ -24,6 +29,11 @@ const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
         setCart(cart.concat({ product: product, quantity: 1, id: response.id }))
       )
   }
+
+  const handleBrand = () => {
+    dispatch(setBrand(product.brand))
+    navigate('/')
+  }
   if (product) {
     return (
       <>
@@ -33,7 +43,16 @@ const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
             <img src={product.image} alt="product_image" />
             <div className="productdetailsleft">
               <span className="productheading">{product.name}</span>
-              <span id="productbrand">{product.brand}</span>
+              <span>
+                <Button
+                  id="productbrand"
+                  onClick={handleBrand}
+                  sx={{ textTransform: 'none', p: 0 }}
+                >
+                  {product.brand}
+                </Button>
+              </span>
+
               <span id="rating"> {product.rating} &#10025;</span>
               <span className="productheading">&#8377;{product.price}</span>
 

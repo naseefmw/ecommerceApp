@@ -101,6 +101,7 @@ body {
 }
 .productdetails img {
   height: 300px;
+  min-width: 200px;
 }
 
 .productdetailsheader {
@@ -120,7 +121,8 @@ body {
   font-size: 40px;
 }
 #productbrand {
-  font-size: 30px;
+  font-size: 25px;
+  padding-left: 0;
 }
 #rating {
   font-size: 25px;
