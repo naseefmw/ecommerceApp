@@ -58,8 +58,8 @@ const FilterBar = () => {
         <InputLabel>Sort By</InputLabel>
         <Select label="Sort by" value={sortFilter} onChange={handleSort}>
           <MenuItem value="DATE">New</MenuItem>
-          <MenuItem value="PRICE_ASC">Price low to high</MenuItem>
-          <MenuItem value="PRICE_DESC">Price high to low</MenuItem>
+          <MenuItem value="PRICE_ASC">Price Low to High</MenuItem>
+          <MenuItem value="PRICE_DESC">Price High to Low</MenuItem>
           <MenuItem value="RATING">Rating</MenuItem>
         </Select>
       </FormControl>
