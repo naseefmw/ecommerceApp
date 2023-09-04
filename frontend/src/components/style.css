@@ -26,11 +26,14 @@ body {
 
 .filternavbar {
   background-color: white;
-  margin-top: 75px;
+  padding: 10px;
+  padding-top: 80px;
   height: 50px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 /*Product Page*/

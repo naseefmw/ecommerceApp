@@ -43,14 +43,17 @@ const FilterBar = () => {
   const handleReset = () => {
     dispatch(reset())
   }
+
+  const width = 130
   return (
     <div className="filternavbar">
       <TextField
+        size="small"
         label="Search"
-        defaultValue={searchFilter}
+        value={searchFilter}
         onChange={handleSearch}
       ></TextField>
-      <FormControl>
+      <FormControl size="small" sx={{ width: width }}>
         <InputLabel>Sort By</InputLabel>
         <Select label="Sort by" value={sortFilter} onChange={handleSort}>
           <MenuItem value="DATE">New</MenuItem>
@@ -59,7 +62,7 @@ const FilterBar = () => {
           <MenuItem value="RATING">Rating</MenuItem>
         </Select>
       </FormControl>
-      <FormControl>
+      <FormControl size="small" sx={{ width: width }}>
         <InputLabel>Category</InputLabel>
         <Select
           label="Category"
@@ -72,7 +75,7 @@ const FilterBar = () => {
           <MenuItem value="SmartPhone">SmartPhone</MenuItem>
         </Select>
       </FormControl>
-      <FormControl>
+      <FormControl size="small" sx={{ width: width }}>
         <InputLabel>Brand</InputLabel>
         <Select label="Brand" value={brandFilter} onChange={handleBrand}>
           <MenuItem value="ALL">All</MenuItem>
@@ -82,7 +85,7 @@ const FilterBar = () => {
           <MenuItem value="Samsung">Samsung</MenuItem>
         </Select>
       </FormControl>
-      <FormControl>
+      <FormControl size="small" sx={{ width: width }}>
         <InputLabel>Price</InputLabel>
         <Select label="Price" value={priceFilter} onChange={handlePrice}>
           <MenuItem value="ALL">All</MenuItem>
@@ -92,7 +95,9 @@ const FilterBar = () => {
           <MenuItem value="O50K">Over 50K</MenuItem>
         </Select>
       </FormControl>
-      <Button onClick={handleReset}>Clear</Button>
+      <Button variant="contained" color="error" onClick={handleReset}>
+        Clear
+      </Button>
     </div>
   )
 }
