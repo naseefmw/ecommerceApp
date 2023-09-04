@@ -18,9 +18,9 @@ const Cart = ({ cart, setCart, user, setUser }) => {
           <p>PRICE DETAILS</p>
 
           <hr />
-          <p>Number of items: {cart.reduce((t, a) => t + a.quantity, 0)}</p>
+          <p>Number of items : {cart.reduce((t, a) => t + a.quantity, 0)}</p>
           <p>
-            Total amount:
+            Total amount : &#8377;
             {cart.reduce((t, a) => t + a.quantity * a.product.price, 0)}
           </p>
           <hr />
