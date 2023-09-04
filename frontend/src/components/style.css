@@ -218,3 +218,12 @@ body {
   justify-content: space-between;
   gap: 15px;
 }
+
+/* Checkout*/
+.checkout {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-left: 2%;
+}

@@ -44,6 +44,7 @@ const Order = ({ item, setCart, cart }) => {
         <img src={item.product.image} alt="product_image" />
         <div className="orderdetails">
           <span>{item.product.name}</span>
+          <span> &#8377; {item.product.price}</span>
           <div className="buttons">
             <Button variant="contained" color="inherit" onClick={handleMinus}>
               -

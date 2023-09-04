@@ -7,6 +7,7 @@ import ProductDetails from './components/ProductPage/ProductDetails'
 import Register from './components/LoginPage/Register'
 import Login from './components/LoginPage/Login'
 import Cart from './components/ShoppingCart/Cart'
+import Checkout from './components/CheckoutPage/Checkout'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -65,6 +66,10 @@ const App = () => {
               setUser={setUser}
             />
           }
+        />
+        <Route
+          path="/checkout"
+          element={<Checkout user={user} setUser={setUser} />}
         />
       </Routes>
     </Router>
