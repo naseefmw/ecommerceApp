@@ -1,3 +1,4 @@
+import { Button } from '@mui/material'
 import AppBar from '../AppBar'
 import '../style.css'
 import Order from './Order'
@@ -8,15 +9,24 @@ const Cart = ({ cart, setCart, user, setUser }) => {
       <AppBar user={user} setUser={setUser} />
       <div className="cartandprices">
         <div className="cart">
-          cart
+          My Cart
           {cart.map((item) => (
             <Order key={item.id} item={item} setCart={setCart} cart={cart} />
           ))}
         </div>
         <div className="prices">
-          price items {cart.reduce((t, a) => t + a.quantity, 0)}
-          price totes
-          {cart.reduce((t, a) => t + a.quantity * a.product.price, 0)}
+          <p>PRICE DETAILS</p>
+
+          <hr />
+          <p>Number of items: {cart.reduce((t, a) => t + a.quantity, 0)}</p>
+          <p>
+            Total amount:
+            {cart.reduce((t, a) => t + a.quantity * a.product.price, 0)}
+          </p>
+          <hr />
+          <Button variant="contained" color="success" size="large">
+            PLACE ORDER
+          </Button>
         </div>
       </div>
     </>

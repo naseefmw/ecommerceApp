@@ -33,17 +33,32 @@ const Order = ({ item, setCart, cart }) => {
       console.log('min')
     }
   }
+
   const handleRemove = () => {
     cartService.remove(item.id)
     setCart(cart.filter((i) => i.id !== item.id))
   }
   if (item.product) {
     return (
-      <div>
-        {item.product.name} {count}
-        <Button onClick={handlePlus}>plus</Button>
-        <Button onClick={handleMinus}>minus</Button>
-        <Button onClick={handleRemove}>remove</Button>
+      <div className="orderbox">
+        <img src={item.product.image} alt="product_image" />
+        <div className="orderdetails">
+          <span>{item.product.name}</span>
+          <div className="buttons">
+            <Button variant="contained" color="inherit" onClick={handleMinus}>
+              -
+            </Button>
+            <span id="count">{count}</span>
+
+            <Button onClick={handlePlus} color="inherit" variant="contained">
+              +
+            </Button>
+
+            <Button variant="outlined" color="error" onClick={handleRemove}>
+              Remove
+            </Button>
+          </div>
+        </div>
       </div>
     )
   }
