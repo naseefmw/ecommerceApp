@@ -3,6 +3,7 @@ const express = require('express')
 require('express-async-errors')
 const app = express()
 const cors = require('cors')
+const path = require('path')
 
 const loginRouter = require('./controllers/login')
 const usersRouter = require('./controllers/users')
@@ -35,6 +36,15 @@ app.use('/api/products', productsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/items', middleware.userExtractor, itemsRouter)
+
+//To fix client-side routing
+app.get('/*', (request, response) => {
+  response.sendFile(path.join(__dirname, 'dist/index.html'), (error) => {
+    if (error) {
+      response.status(500).send(error)
+    }
+  })
+})
 
 if (process.env.NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing')
