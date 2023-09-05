@@ -92,7 +92,7 @@ const Home = ({ productList, user, setUser }) => {
   return (
     <>
       <FilterBar />
-      <AppBar user={user} setUser={setUser} />
+      <AppBar user={user} setUser={setUser} show={true} />
 
       <ProductListing productList={filteredProducts} />
     </>

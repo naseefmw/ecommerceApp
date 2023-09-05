@@ -1,8 +1,12 @@
-import '../style.css'
+import './style.css'
+import { useState } from 'react'
+import Box from '@mui/material/Box'
+import SwipeableDrawer from '@mui/material/SwipeableDrawer'
+import { IconButton } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
 import {
   Select,
   MenuItem,
-  TextField,
   FormControl,
   InputLabel,
   Button,
@@ -11,23 +15,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import {
   priceRange,
   reset,
-  searchFor,
   setBrand,
   sortBy,
   setCategory,
-} from '../../reducers/filterReducer'
+} from '../reducers/filterReducer'
 
-const FilterBar = () => {
+export default function MyDrawer({ show }) {
   const dispatch = useDispatch()
-  const searchFilter = useSelector((state) => state.SEARCH)
   const sortFilter = useSelector((state) => state.SORT)
   const brandFilter = useSelector((state) => state.BRAND)
   const categoryFilter = useSelector((state) => state.CATEGORY)
   const priceFilter = useSelector((state) => state.PRICE)
 
-  const handleSearch = (event) => {
-    dispatch(searchFor(event.target.value))
-  }
   const handleSort = (event) => {
     dispatch(sortBy(event.target.value))
   }
@@ -43,24 +42,30 @@ const FilterBar = () => {
   const handleReset = () => {
     dispatch(reset())
   }
+  const [state, setState] = useState(false)
 
-  const width = 130
-  return (
-    <div className="filternavbar">
-      <TextField
-        sx={{
-          width: '95%',
-          maxWidth: 350,
-          '@media (max-width: 750px)': {
-            maxWidth: 700,
-          },
-        }}
-        size="small"
-        label="Search"
-        value={searchFilter}
-        onChange={handleSearch}
-      ></TextField>
-      <div className="filters">
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return
+    }
+
+    setState(open)
+  }
+  const width = 120
+
+  const list = () => (
+    <Box
+      sx={{ width: 160 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <div className="filtersindrawer">
+        Filters
         <FormControl size="small" sx={{ width: width }}>
           <InputLabel>Sort By</InputLabel>
           <Select label="Sort by" value={sortFilter} onChange={handleSort}>
@@ -107,8 +112,32 @@ const FilterBar = () => {
           Clear
         </Button>
       </div>
-    </div>
+    </Box>
+  )
+
+  return (
+    <>
+      {show ? (
+        <div className="drawer">
+          <IconButton
+            size="large"
+            edge="start"
+            sx={{ mr: 2 }}
+            onClick={toggleDrawer(true)}
+          >
+            <MenuIcon />
+          </IconButton>
+
+          <SwipeableDrawer
+            anchor={'left'}
+            open={state}
+            onClose={toggleDrawer(false)}
+            onOpen={toggleDrawer(true)}
+          >
+            {list()}
+          </SwipeableDrawer>
+        </div>
+      ) : null}
+    </>
   )
 }
-
-export default FilterBar

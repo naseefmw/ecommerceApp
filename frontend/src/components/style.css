@@ -34,6 +34,21 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    justify-content: center;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .filtersindrawer {
+    display: none;
+  }
+
+  .drawer {
+    display: none;
   }
   .productlist {
     margin-top: 10px;
@@ -237,6 +252,22 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    justify-content: center;
+  }
+
+  .filters {
+    display: none;
+  }
+  .filtersindrawer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .drawer {
   }
   .productlist {
     margin-top: 10px;

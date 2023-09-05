@@ -14,8 +14,9 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { reset } from '../reducers/filterReducer'
 import { Button } from '@mui/material'
+import Drawer from './Drawer'
 
-const MyAppBar = ({ user, setUser }) => {
+const MyAppBar = ({ user, setUser, show }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -79,6 +80,7 @@ const MyAppBar = ({ user, setUser }) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ bgcolor: '#E84855' }}>
         <Toolbar>
+          <Drawer show={show} />
           <IconButton onClick={handleLogo}>
             <Typography variant="h6" noWrap component="div">
               <span className="logo">Circuit Cart</span>
