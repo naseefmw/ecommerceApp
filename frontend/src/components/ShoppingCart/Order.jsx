@@ -55,7 +55,12 @@ const Order = ({ item, setCart, cart }) => {
               +
             </Button>
 
-            <Button variant="outlined" color="error" onClick={handleRemove}>
+            <Button
+              variant="contained"
+              color="error"
+              onClick={handleRemove}
+              size="small"
+            >
               Remove
             </Button>
           </div>
