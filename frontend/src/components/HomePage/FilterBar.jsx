@@ -97,10 +97,10 @@ const FilterBar = () => {
           <InputLabel>Price</InputLabel>
           <Select label="Price" value={priceFilter} onChange={handlePrice}>
             <MenuItem value="ALL">All</MenuItem>
-            <MenuItem value="U10K">Under 10K</MenuItem>
-            <MenuItem value="10K20K">10K - 20K</MenuItem>
+            <MenuItem value="U20K">Under 20K</MenuItem>
             <MenuItem value="20K50K">20K - 50K</MenuItem>
-            <MenuItem value="O50K">Over 50K</MenuItem>
+            <MenuItem value="50K80K">50K - 80K</MenuItem>
+            <MenuItem value="O80K">Over 80K</MenuItem>
           </Select>
         </FormControl>
         <Button variant="contained" color="error" onClick={handleReset}>

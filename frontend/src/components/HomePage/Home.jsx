@@ -39,15 +39,14 @@ const Home = ({ productList, user, setUser }) => {
 
   const priceRangeFilter = (list) => {
     switch (priceFilter) {
-      case 'U10K':
-        return list.filter((p) => p.price < 10000)
-      case '10K20K':
-        return list.filter((p) => p.price >= 10000 && p.price < 20000)
-
+      case 'U20K':
+        return list.filter((p) => p.price < 20000)
       case '20K50K':
         return list.filter((p) => p.price >= 20000 && p.price < 50000)
-      case 'O50K':
-        return list.filter((p) => p.price >= 50000)
+      case '50K80K':
+        return list.filter((p) => p.price >= 50000 && p.price < 80000)
+      case 'O80K':
+        return list.filter((p) => p.price >= 80000)
       default:
         return list
     }
