@@ -29,7 +29,7 @@ const Checkout = ({ user, setUser }) => {
           multiline
           label="Address"
           maxRows={5}
-          sx={{ width: '30%', minWidth: 400 }}
+          sx={{ width: '90%' }}
         />
 
         <FormControl>
@@ -51,7 +51,7 @@ const Checkout = ({ user, setUser }) => {
         <Button
           variant="contained"
           color="success"
-          size="large"
+          size="medium"
           sx={{ width: 300 }}
           onClick={handleButton}
         >
