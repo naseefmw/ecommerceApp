@@ -45,8 +45,9 @@ const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
               <span>
                 <Button
                   id="productbrand"
+                  variant="text"
                   onClick={handleBrand}
-                  sx={{ textTransform: 'none', p: 0 }}
+                  sx={{ textTransform: 'none', py: 0, pl: 0 }}
                 >
                   {product.brand}
                 </Button>
@@ -64,7 +65,7 @@ const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
                   variant="contained"
                   color="success"
                   onClick={handleButton}
-                  size="large"
+                  size="medium"
                 >
                   Add to Cart
                 </Button>
@@ -73,9 +74,8 @@ const ProductDetails = ({ user, productList, cart, setCart, setUser }) => {
                   variant="contained"
                   color="success"
                   disabled
-                  size="large"
+                  size="medium"
                 >
-                  {' '}
                   Sign in to use Cart
                 </Button>
               )}
