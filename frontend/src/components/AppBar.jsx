@@ -112,7 +112,7 @@ const MyAppBar = ({ user, setUser, show }) => {
                 </IconButton>
               </>
             ) : (
-              <Button variant="outlined" onClick={handleLogin}>
+              <Button variant="contained" onClick={handleLogin}>
                 Sign in
               </Button>
             )}
