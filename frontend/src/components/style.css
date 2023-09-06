@@ -12,14 +12,7 @@ body {
 .logo {
   font-family: 'Righteous';
   font-size: 25px;
-  background: linear-gradient(
-    0deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(0, 0, 0, 1) 48%,
-    rgba(33, 0, 255, 1) 76%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #1600aa;
 }
 
 @media (min-width: 750px) {
