@@ -61,6 +61,9 @@ frontend
 ## Screenshots
 
 ![homepage](screenshots/homepage.png)
+
 ![cart](screenshots/cart.png)
-![homepage-mobile](screenshots/home-mobile.png)
-![cart-mobile](screenshots/cart-mobile.png)
+
+![homepage-mobile](screenshots/home-mobile.png | width=200px)
+
+![cart-mobile](screenshots/cart-mobile.png | width=200px)
