@@ -64,5 +64,4 @@ frontend
 
 ![cart](screenshots/cart.png)
 
-<img src='screenshots/home-mobile.png' alt='homepage-mobile' width=200/>
-<img src='screenshots/cart-mobile.png' alt='cart-mobile' width=200/>
+<img src='screenshots/home-mobile.png' alt='homepage-mobile' width=300/><img src='screenshots/cart-mobile.png' alt='cart-mobile' width=300/>
